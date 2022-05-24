@@ -1,7 +1,7 @@
 import { FunctionComponent } from "react";
 import Page from "../layout/Page";
 import Section from "../layout/Section";
-import { events } from "../../utils/events";
+import { events } from "../../utils/content";
 import EventCard from "../elements/EventCard";
 
 const Events: FunctionComponent = () => {

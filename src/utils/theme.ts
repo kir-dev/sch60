@@ -3,6 +3,7 @@ export const colors = {
   themeLight: "#F5F5F5",
   yellow: "#FFBA00",
   translucentDark: "#040E1AAA",
+  dark: "#111B28",
 };
 
 export const fontSize = {

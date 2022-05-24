@@ -11,3 +11,8 @@ export type EventType = {
   description: string;
   image: string;
 };
+
+export type TimelineEntity = {
+  year: number;
+  description: string;
+};

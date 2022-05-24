@@ -56,12 +56,12 @@ const Image = styled.div<{ backgroundUrl?: string }>`
 const EventDetailsWrapper = styled.div`
   margin: 0 ${spacing.lg};
   @media screen and (max-width: ${breakpoints.md}) {
-    margin: 0;
+    margin: ${spacing.lg} 0 0 0;
   }
 `;
 
 const EventName = styled.h2`
-  margin: 0;
+  margin: 0 0 ${spacing.md} 0;
   font-size: ${fontSize["4xl"]};
 `;
 

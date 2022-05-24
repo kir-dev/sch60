@@ -3,7 +3,7 @@ import Page from "../layout/Page";
 import styled from "styled-components";
 import { breakpoints, colors, spacing } from "../../utils/theme";
 import { Tile, TileLayout } from "../elements/Tile";
-import { events } from "../../utils/events";
+import { events } from "../../utils/content";
 import Section from "../layout/Section";
 import Button from "../elements/Button";
 

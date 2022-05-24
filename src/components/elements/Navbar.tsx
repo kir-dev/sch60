@@ -43,7 +43,11 @@ const Navbar: FunctionComponent<NavbarProps> = ({ theme }) => {
           }}
           isOpen={menuOpen}
         />
-        <Logo />
+        <Logo
+          onClick={() => {
+            navigate("/");
+          }}
+        />
       </NavbarWrapperMobile>
     </>
   );
@@ -167,7 +171,7 @@ const MenuButtonWrapper = styled.button<{ theme: string }>`
 `;
 
 const Drawer = styled(NavbarBaseStyle)<{ theme: string; open: boolean }>`
-  position: absolute;
+  position: fixed;
   top: 13%;
   left: 10%;
   display: none;

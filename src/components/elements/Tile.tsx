@@ -7,7 +7,7 @@ export const TileLayout = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  @media screen and (max-width: ${breakpoints.md}) {
+  @media screen and (max-width: ${breakpoints.lg}) {
     flex-direction: column;
   }
 `;
@@ -35,7 +35,7 @@ const TileWrapper = styled.div<{ backgroundUrl?: string }>`
     text-overflow: ellipsis;
     overflow: hidden;
   }
-  @media screen and (max-width: ${breakpoints.md}) {
+  @media screen and (max-width: ${breakpoints.lg}) {
     width: 90vw;
     height: 90vw;
     margin-top: ${spacing.md};

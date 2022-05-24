@@ -79,10 +79,12 @@ const NavbarBaseStyle = styled.nav<{ theme: string }>`
     theme === "dark" ? colors.themeLight : colors.themeDark};
   padding: ${spacing.md};
   align-items: center;
+  z-index: 30;
 `;
 
 const NavbarWrapper = styled(NavbarBaseStyle)`
-  width: fit-content;
+  width: 90%;
+  max-width: 1200px;
   justify-content: center;
   @media screen and (max-width: ${breakpoints.md}) {
     display: none;
@@ -90,13 +92,13 @@ const NavbarWrapper = styled(NavbarBaseStyle)`
 `;
 
 const NavbarWrapperMobile = styled(NavbarBaseStyle)`
-  display: none;
   width: 90%;
+  max-width: 1200px;
+  display: none;
   justify-content: space-between;
   @media screen and (max-width: ${breakpoints.md}) {
     display: flex;
   }
-  z-index: 30;
 `;
 
 const Logo = styled.div`

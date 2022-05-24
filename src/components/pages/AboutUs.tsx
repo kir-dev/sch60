@@ -62,7 +62,9 @@ const FirstSection = styled.div`
   background-color: ${colors.translucentDark};
   color: white;
   width: 90%;
-  margin: -10% auto 0 auto;
+  margin: 0 auto;
+  position: relative;
+  top: -1rem;
   max-width: 1200px;
   h1 {
     font-weight: normal;
@@ -72,6 +74,8 @@ const FirstSection = styled.div`
   }
   img {
     width: 100%;
+    object-fit: cover;
+    height: 20rem;
   }
 `;
 

@@ -21,6 +21,7 @@ export const Wordcloud: FunctionComponent = () => {
       <ReactWordcloud
         words={words}
         options={{
+          fontFamily: "Inter",
           rotations: 2,
           rotationAngles: [-90, 0],
           fontSizes: [20, 60],

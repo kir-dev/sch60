@@ -6,6 +6,7 @@ import { Tile, TileLayout } from "../elements/Tile";
 import { events } from "../../utils/content";
 import Section from "../layout/Section";
 import Button from "../elements/Button";
+import { Wordcloud } from "../elements/Wordcloud";
 
 const Main: FunctionComponent = () => {
   return (
@@ -38,6 +39,7 @@ const Main: FunctionComponent = () => {
       <Section>
         <Button to="/esemenyek" title="További események" />
       </Section>
+      <Wordcloud />
     </Page>
   );
 };

@@ -2,6 +2,9 @@ import { FunctionComponent } from "react";
 import styled from "styled-components";
 import { ThemeType } from "../../utils/types";
 import { breakpoints, colors, spacing } from "../../utils/theme";
+import { ReactComponent as Schonherz } from "../logos/schonherz.svg";
+import { ReactComponent as KirDev } from "../logos/kirdev.svg";
+import { ReactComponent as SchDesign } from "../logos/schdesign.svg";
 
 interface FooterProps {
   theme: ThemeType;
@@ -17,15 +20,9 @@ const Footer: FunctionComponent<FooterProps> = ({ theme }) => {
         fb.com/schonherz60
       </a>
       <div>
-        <img
-          alt="Schönherz"
-          src={process.env.PUBLIC_URL + "/img/schonherz.svg"}
-        />
-        <img alt="KirDev" src={process.env.PUBLIC_URL + "/img/kirdev.svg"} />
-        <img
-          alt="schdesign"
-          src={process.env.PUBLIC_URL + "/img/schdesign.svg"}
-        />
+        <Schonherz />
+        <KirDev />
+        <SchDesign />
       </div>
     </FooterWrapper>
   );
@@ -56,10 +53,14 @@ const FooterWrapper = styled.footer<{ theme: ThemeType }>`
     display: flex;
     align-items: center;
     justify-content: center;
-    img {
+    svg {
       height: 5rem;
       width: 10rem;
       margin: ${spacing.md};
+    }
+    .dynamicColor path,
+    .dynamicColor rect {
+      ${({ theme }) => theme === "light" && "fill:white !important;"};
     }
     @media screen and (max-width: ${breakpoints.md}) {
       flex-direction: column;

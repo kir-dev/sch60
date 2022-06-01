@@ -13,6 +13,9 @@ const Main: FunctionComponent = () => {
     <Page title="Főoldal">
       <Section>
         <Description>
+          <div>
+            <h1>SCH x 60</h1>
+          </div>
           <p>
             Idén ünnepeljük a kollégiumi önkormányzatiság 60. évfordulóját, amit
             a korábbi évtizedek alapján <span>SCH60</span> jubileumi évnek
@@ -29,7 +32,10 @@ const Main: FunctionComponent = () => {
       <Section title="Közelgő események" widthRestriction={false}>
         <TileLayout>
           {events
-            .filter((e) => e.date.getTime() > Date.now())
+            .filter(
+              (e) => Math.ceil((e.date.getTime() - Date.now()) / 86400000) >= 0
+            )
+            .sort((a, b) => a.date.getTime() - b.date.getTime())
             .slice(0, 3)
             .map((event) => (
               <Tile event={event} />
@@ -51,7 +57,6 @@ const Description = styled.div`
   color: ${colors.themeLight};
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
   align-items: center;
   font-weight: lighter;
   @media screen and (max-width: ${breakpoints.md}) {
@@ -60,6 +65,14 @@ const Description = styled.div`
   span {
     color: #ffba00;
     text-decoration: underline;
+  }
+  div {
+    width: 100%;
+    min-width: 15rem;
+    padding: ${spacing.lg};
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 `;
 

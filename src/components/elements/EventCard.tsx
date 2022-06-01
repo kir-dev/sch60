@@ -9,7 +9,7 @@ interface EventCardProps {
 
 const EventCard: FunctionComponent<EventCardProps> = ({ event }) => {
   const daysUntil = useMemo(() => {
-    return Math.floor((event.date.getTime() - Date.now()) / 86400000);
+    return Math.ceil((event.date.getTime() - Date.now()) / 86400000);
   }, [event.date]);
   return (
     <EventCardWrapper>
@@ -22,7 +22,13 @@ const EventCard: FunctionComponent<EventCardProps> = ({ event }) => {
         <EventDataLabel>{event.location}</EventDataLabel>
         <EventDescription>{event.description}</EventDescription>
       </EventDetailsWrapper>
-      <DaysLabel>{daysUntil} nap múlva</DaysLabel>
+      <DaysLabel>
+        {daysUntil === 0
+          ? "Ma"
+          : daysUntil > 0
+          ? daysUntil + " nap múlva"
+          : "Vége"}
+      </DaysLabel>
     </EventCardWrapper>
   );
 };

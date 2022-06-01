@@ -25,15 +25,11 @@ const Navbar: FunctionComponent<NavbarProps> = ({ theme }) => {
             navigate("/");
           }}
         />
-        <NavbarItem to="/rolunk" active>
-          Rólunk
-        </NavbarItem>
+        <NavbarItem to="/rolunk">Rólunk</NavbarItem>
       </NavbarWrapper>
       <Drawer open={menuOpen} theme={theme}>
         <NavbarItem to="/esemenyek">Események</NavbarItem>
-        <NavbarItem to="/rolunk" active>
-          Rólunk
-        </NavbarItem>
+        <NavbarItem to="/rolunk">Rólunk</NavbarItem>
       </Drawer>
       <NavbarWrapperMobile theme={theme}>
         <MenuButton
@@ -55,7 +51,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({ theme }) => {
 
 export default Navbar;
 
-const NavbarItem = styled(Link)<{ active?: boolean }>`
+const NavbarItem = styled(Link)`
   text-decoration: none;
   font-weight: lighter;
   font-size: ${fontSize.xl};

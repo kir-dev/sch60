@@ -1,4 +1,4 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, Fragment } from "react";
 import Page from "../layout/Page";
 import styled from "styled-components";
 import { breakpoints, colors, fontSize, spacing } from "../../utils/theme";
@@ -9,11 +9,8 @@ import { AiFillCaretDown } from "react-icons/ai";
 const AboutUs: FunctionComponent = () => {
   return (
     <Page title="Rólunk" theme="dark">
+      <WireImage src={"/img/wire_white.svg"} alt="Schönherz Wireframe" />
       <FirstSection>
-        <img
-          src={process.env.PUBLIC_URL + "/img/sch_building.png"}
-          alt="Sch épület"
-        />
         <FirstSectionContent>
           <h1>Bemutatkozás</h1>
           <p>
@@ -36,19 +33,19 @@ const AboutUs: FunctionComponent = () => {
           {timeline.map((entry, index) => {
             if (index % 2) {
               return (
-                <>
+                <Fragment key={entry.description}>
                   <div className="empty" />
                   <TimelineYearCell>{entry.year}</TimelineYearCell>
                   <TimelineCell>{entry.description}</TimelineCell>
-                </>
+                </Fragment>
               );
             } else
               return (
-                <>
+                <Fragment key={entry.description}>
                   <TimelineCell>{entry.description}</TimelineCell>
                   <TimelineYearCell>{entry.year}</TimelineYearCell>
                   <div className="empty" />
-                </>
+                </Fragment>
               );
           })}
         </TimelineGrid>
@@ -64,7 +61,6 @@ const FirstSection = styled.div`
   width: 90%;
   margin: 0 auto;
   position: relative;
-  top: -1rem;
   max-width: 1200px;
   h1 {
     font-weight: normal;
@@ -72,11 +68,16 @@ const FirstSection = styled.div`
   p {
     font-weight: lighter;
   }
-  img {
-    width: 100%;
-    object-fit: cover;
-    height: 20rem;
-  }
+`;
+
+const WireImage = styled.img`
+  display: flex;
+  height: 40vw;
+  max-height: 40rem;
+  width: 90%;
+  margin: 0 auto;
+  object-fit: cover;
+  object-position: top;
 `;
 
 const FirstSectionContent = styled.div`

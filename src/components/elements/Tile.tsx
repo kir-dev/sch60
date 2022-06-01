@@ -72,12 +72,14 @@ interface TileProps {
 
 export const Tile: FunctionComponent<TileProps> = ({ event }) => {
   const daysUntil = useMemo(() => {
-    return Math.floor((event.date.getTime() - Date.now()) / 86400000);
+    return Math.ceil((event.date.getTime() - Date.now()) / 86400000);
   }, [event.date]);
   return (
     <TileWrapper backgroundUrl={event.image}>
       <EventName>{event.name}</EventName>
-      <DayCounterLabel>{daysUntil}</DayCounterLabel>
+      <DayCounterLabel>
+        {daysUntil === 0 ? "Mai" : daysUntil > 0 ? daysUntil : "Vége"}
+      </DayCounterLabel>
       <DayLabel>nap</DayLabel>
       <EventLocation>
         {event.date.toLocaleDateString("hu-HU", {

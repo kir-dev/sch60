@@ -3,10 +3,11 @@ import ReactWordcloud from "react-wordcloud";
 import { keywords } from "../../utils/content";
 import { colors } from "../../utils/theme";
 import Section from "../layout/Section";
+import type { Word } from "react-wordcloud";
 
 export const Wordcloud: FunctionComponent = () => {
   const words = useMemo(() => {
-    const temp: WordcloudWordType[] = [];
+    const temp: Word[] = [];
     keywords.forEach((kw) => {
       const record = temp.findIndex(
         (element) => element.text.toLowerCase() === kw.toLowerCase()
@@ -34,5 +35,3 @@ export const Wordcloud: FunctionComponent = () => {
     </Section>
   );
 };
-
-type WordcloudWordType = { text: string; value: number };

@@ -53,7 +53,7 @@ export default Navbar;
 
 const NavbarItem = styled(Link)`
   text-decoration: none;
-  font-weight: lighter;
+  font-weight: 300;
   font-size: ${fontSize.xl};
   margin: 0 ${spacing.xl};
 `;

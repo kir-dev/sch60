@@ -66,7 +66,7 @@ const FirstSection = styled.div`
     font-weight: normal;
   }
   p {
-    font-weight: lighter;
+    font-weight: 400;
   }
 `;
 

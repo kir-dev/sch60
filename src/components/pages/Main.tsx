@@ -59,7 +59,7 @@ const Description = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  font-weight: lighter;
+  font-weight: 300;
   @media screen and (max-width: ${breakpoints.md}) {
     flex-direction: column;
   }

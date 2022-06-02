@@ -6,7 +6,7 @@ export type ThemeType = "light" | "dark";
 
 export type EventType = {
   name: string;
-  date: Date;
+  date: Date | string;
   location: string;
   description: string;
   image: string;

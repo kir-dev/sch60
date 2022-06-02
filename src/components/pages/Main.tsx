@@ -33,9 +33,10 @@ const Main: FunctionComponent = () => {
         <TileLayout>
           {events
             .filter(
-              (e) => Math.ceil((e.date.getTime() - Date.now()) / 86400000) >= 0
+              (e) =>
+                typeof e.date === "string" ||
+                Math.ceil((e.date.getTime() - Date.now()) / 86400000) >= 0
             )
-            .sort((a, b) => a.date.getTime() - b.date.getTime())
             .slice(0, 3)
             .map((event) => (
               <Tile event={event} />

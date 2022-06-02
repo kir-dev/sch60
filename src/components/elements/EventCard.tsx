@@ -1,34 +1,28 @@
-import { FunctionComponent, useMemo } from "react";
+import { FunctionComponent } from "react";
 import styled from "styled-components";
 import { breakpoints, colors, fontSize, spacing } from "../../utils/theme";
 import { EventType } from "../../utils/types";
+import { getCardText } from "../../utils/getDaysUntilFromDate";
 
 interface EventCardProps {
   event: EventType;
 }
 
 const EventCard: FunctionComponent<EventCardProps> = ({ event }) => {
-  const daysUntil = useMemo(() => {
-    return Math.ceil((event.date.getTime() - Date.now()) / 86400000);
-  }, [event.date]);
   return (
     <EventCardWrapper>
       <Image backgroundUrl={event.image} />
       <EventDetailsWrapper>
         <EventName>{event.name}</EventName>
         <EventDataLabel>
-          {event.date.toLocaleDateString("hu-HU")}
+          {typeof event.date === "string"
+            ? event.date
+            : event.date.toLocaleDateString("hu-HU")}
         </EventDataLabel>
         <EventDataLabel>{event.location}</EventDataLabel>
         <EventDescription>{event.description}</EventDescription>
       </EventDetailsWrapper>
-      <DaysLabel>
-        {daysUntil === 0
-          ? "Ma"
-          : daysUntil > 0
-          ? daysUntil + " nap múlva"
-          : "Vége"}
-      </DaysLabel>
+      <DaysLabel>{getCardText(event.date)}</DaysLabel>
     </EventCardWrapper>
   );
 };

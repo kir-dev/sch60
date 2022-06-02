@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { breakpoints, colors, fontSize, spacing } from "../../utils/theme";
 import { EventType } from "../../utils/types";
-import { FunctionComponent, useMemo } from "react";
+import { FunctionComponent } from "react";
+import { getTileText } from "../../utils/getDaysUntilFromDate";
 
 export const TileLayout = styled.div`
   display: flex;
@@ -71,21 +72,18 @@ interface TileProps {
 }
 
 export const Tile: FunctionComponent<TileProps> = ({ event }) => {
-  const daysUntil = useMemo(() => {
-    return Math.ceil((event.date.getTime() - Date.now()) / 86400000);
-  }, [event.date]);
   return (
     <TileWrapper backgroundUrl={event.image}>
       <EventName>{event.name}</EventName>
-      <DayCounterLabel>
-        {daysUntil === 0 ? "Mai" : daysUntil > 0 ? daysUntil : "Vége"}
-      </DayCounterLabel>
+      <DayCounterLabel>{getTileText(event.date)}</DayCounterLabel>
       <DayLabel>nap</DayLabel>
       <EventLocation>
-        {event.date.toLocaleDateString("hu-HU", {
-          month: "2-digit",
-          day: "2-digit",
-        })}
+        {typeof event.date === "string"
+          ? event.date
+          : event.date.toLocaleDateString("hu-HU", {
+              month: "2-digit",
+              day: "2-digit",
+            })}
         , {event.location}
       </EventLocation>
     </TileWrapper>

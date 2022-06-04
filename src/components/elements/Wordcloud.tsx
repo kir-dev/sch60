@@ -1,12 +1,22 @@
-import { FunctionComponent, useMemo } from "react";
+import { FunctionComponent, useEffect, useMemo, useState } from "react";
 import ReactWordcloud from "react-wordcloud";
 import { keywords } from "../../utils/content";
 import { colors } from "../../utils/theme";
 import Section from "../layout/Section";
+import type { Word } from "react-wordcloud";
+import { WordcloudPlaceholder } from "./WordcloudPlaceholder";
 
 export const Wordcloud: FunctionComponent = () => {
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setShow(true);
+    }, 2000);
+    return () => clearTimeout(timeout);
+  }, [show]);
   const words = useMemo(() => {
-    const temp: WordcloudWordType[] = [];
+    const temp: Word[] = [];
     keywords.forEach((kw) => {
       const record = temp.findIndex(
         (element) => element.text.toLowerCase() === kw.toLowerCase()
@@ -16,7 +26,7 @@ export const Wordcloud: FunctionComponent = () => {
     });
     return temp;
   }, []);
-  return (
+  return show ? (
     <Section>
       <ReactWordcloud
         words={words}
@@ -32,7 +42,9 @@ export const Wordcloud: FunctionComponent = () => {
         }}
       />
     </Section>
+  ) : (
+    <Section>
+      <WordcloudPlaceholder>Szófelő betöltése...</WordcloudPlaceholder>
+    </Section>
   );
 };
-
-type WordcloudWordType = { text: string; value: number };

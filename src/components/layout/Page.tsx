@@ -6,6 +6,7 @@ import Navbar from "../elements/Navbar";
 import Footer from "./Footer";
 import ScrollToTop from "../../utils/ScrollToTop";
 import { Helmet } from "react-helmet";
+import { motion, MotionProps } from "framer-motion";
 
 interface PageProps {
   theme?: "light" | "dark";
@@ -24,7 +25,7 @@ const Page: FunctionComponent<PageProps & ChildrenProp> = ({
       </Helmet>
       <ScrollToTop />
       <Navbar theme={theme} />
-      {children}
+      <motion.main {...pageAnimationOptions}>{children}</motion.main>
       <Footer theme={theme} />
     </PageWrapper>
   );
@@ -39,5 +40,12 @@ const PageWrapper = styled.div<{ theme: string }>`
     box-sizing: border-box;
   }
 `;
+
+const pageAnimationOptions: MotionProps = {
+  transition: { duration: 0.8 },
+  initial: { opacity: 0},
+  animate: { opacity: 1 },
+  exit: { opacity: 0}
+};
 
 export default Page;

@@ -39,7 +39,7 @@ const Main: FunctionComponent = () => {
             )
             .slice(0, 3)
             .map((event) => (
-              <Tile event={event} />
+              <Tile key={event.name} event={event} />
             ))}
         </TileLayout>
       </Section>

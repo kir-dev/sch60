@@ -13,6 +13,7 @@ export function getTileText(date: Date | string) {
 
 export function getCardText(date: Date | string) {
   const days = calculateDays(date);
+  if (days === "-") return "hamarosan";
   if (days === 0) return "Ma";
   if (days < 0) return "Vége";
   return days + " nap múlva";

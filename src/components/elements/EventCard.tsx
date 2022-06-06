@@ -84,7 +84,7 @@ const EventName = styled.h2`
 
 const EventDataLabel = styled.p`
   margin: 0;
-  font-size: ${fontSize.sm};
+  font-size: ${fontSize.lg};
 `;
 
 const EventDescription = styled.p`

@@ -3,7 +3,7 @@ import Page from "../layout/Page";
 import styled from "styled-components";
 import { breakpoints, colors, fontSize, spacing } from "../../utils/theme";
 import { Tile, TileLayout } from "../elements/Tile";
-import { events } from "../../utils/content";
+import { events, fbPages } from "../../utils/content";
 import Section from "../layout/Section";
 import Button from "../elements/Button";
 import { Wordcloud } from "../elements/Wordcloud";
@@ -18,8 +18,11 @@ const Main: FunctionComponent = () => {
           </div>
           <p>
             Idén ünnepeljük a kollégiumi önkormányzatiság 60. évfordulóját, amit
-            a korábbi évtizedek alapján <span>SCH60</span> jubileumi évnek
-            hívunk.
+            a korábbi évtizedek alapján{" "}
+            <a href={fbPages.sch60} target="_blank" rel="noopener">
+              <span>SCH60</span>
+            </a>{" "}
+            jubileumi évnek hívunk.
             <br />
             Schönherzes aktív kollégisták, a Kollégiumi Bizottság, a
             Nevelőtanári Gárda és a Schönherz Alumni Vezetősége szervezésében &

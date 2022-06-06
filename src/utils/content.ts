@@ -145,3 +145,11 @@ export const keywords = [
   "közösség",
   "Impulzus",
 ];
+
+export const fbPages = {
+  sch60: "https://www.facebook.com/schonherz60/",
+  schcst: "https://www.facebook.com/schcst",
+  events: {
+    junialis: "https://www.facebook.com/events/413093190377370",
+  },
+};

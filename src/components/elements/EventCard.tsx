@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { breakpoints, colors, fontSize, spacing } from "../../utils/theme";
 import { EventType } from "../../utils/types";
 import { getCardText } from "../../utils/getDaysUntilFromDate";
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 interface EventCardProps {
   event: EventType;
@@ -10,20 +12,35 @@ interface EventCardProps {
 
 const EventCard: FunctionComponent<EventCardProps> = ({ event }) => {
   return (
-    <EventCardWrapper>
-      <Image backgroundUrl={event.image} />
-      <EventDetailsWrapper>
-        <EventName>{event.name}</EventName>
-        <EventDataLabel>
-          {typeof event.date === "string"
-            ? event.date
-            : event.date.toLocaleDateString("hu-HU")}
-        </EventDataLabel>
-        <EventDataLabel>{event.location}</EventDataLabel>
-        <EventDescription>{event.description}</EventDescription>
-      </EventDetailsWrapper>
-      <DaysLabel>{getCardText(event.date)}</DaysLabel>
-    </EventCardWrapper>
+    <a
+      //@ts-expect-error disable default onClick for divs without a href link
+      href={event.link || null}
+      style={{ textDecoration: "none" }}
+      target="_blank"
+      rel="noreferrer"
+    >
+      <EventCardWrapper
+        as={motion.div}
+        whileHover={{
+          scale: 1.05,
+          transition: { duration: 0.2 },
+        }}
+        whileTap={{ scale: 0.9 }}
+      >
+        <Image backgroundUrl={event.image} />
+        <EventDetailsWrapper>
+          <EventName>{event.name}</EventName>
+          <EventDataLabel>
+            {typeof event.date === "string"
+              ? event.date
+              : event.date.toLocaleDateString("hu-HU")}
+          </EventDataLabel>
+          <EventDataLabel>{event.location}</EventDataLabel>
+          <EventDescription>{event.description}</EventDescription>
+        </EventDetailsWrapper>
+        <DaysLabel>{getCardText(event.date)}</DaysLabel>
+      </EventCardWrapper>
+    </a>
   );
 };
 

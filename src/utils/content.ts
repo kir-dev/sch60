@@ -1,4 +1,13 @@
+import { link } from "fs";
 import { EventType, TimelineEntity } from "./types";
+
+export const fbPages = {
+  sch60: "https://www.facebook.com/schonherz60/",
+  schcst: "https://www.facebook.com/schcst",
+  events: {
+    junialis: "https://www.facebook.com/events/413093190377370",
+  },
+};
 
 export const events: EventType[] = [
   {
@@ -7,6 +16,7 @@ export const events: EventType[] = [
     location: "Schönherz kollégium",
     image: "/img/events/schonherz.png",
     description: "Egész napos családi és CSR programok a Schönherz körül.",
+    link: fbPages.events.junialis,
   },
   {
     name: "CST50",
@@ -15,6 +25,7 @@ export const events: EventType[] = [
     image: "/img/events/cst.jpg",
     description:
       "50. alkalommal kerül megrendezésre a méltán híres Csillagtúra.",
+    link: fbPages.schcst,
   },
   {
     name: "QPA50",
@@ -144,11 +155,3 @@ export const keywords = [
   "közösség",
   "Impulzus",
 ];
-
-export const fbPages = {
-  sch60: "https://www.facebook.com/schonherz60/",
-  schcst: "https://www.facebook.com/schcst",
-  events: {
-    junialis: "https://www.facebook.com/events/413093190377370",
-  },
-};

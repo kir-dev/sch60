@@ -35,15 +35,14 @@ const Main: FunctionComponent = () => {
       <Section>
         <Button to="/rolunk" title="Történetünk" />
       </Section>
-      <Section title="Közelgő események" widthRestriction={false}>
+      <Section title="Közelgő események" widthRestriction={true}>
         <TileLayout>
           {events
             .filter(
               (e) =>
-                typeof e.date === "string" ||
+                typeof e.date !== "string" &&
                 Math.ceil((e.date.getTime() - Date.now()) / 86400000) >= 0
             )
-            .slice(0, 3)
             .map((event) => (
               <Tile key={event.name} event={event} />
             ))}

@@ -6,8 +6,7 @@ export const events: EventType[] = [
     date: new Date(2022, 5, 18),
     location: "Schönherz kollégium",
     image: "/img/events/schonherz.png",
-    description:
-      "Egész napos családi és CSR programok a Schönherz körül Iván nappal összekötve.",
+    description: "Egész napos családi és CSR programok a Schönherz körül.",
   },
   {
     name: "CST50",

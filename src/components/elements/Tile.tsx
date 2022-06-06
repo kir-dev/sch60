@@ -52,7 +52,7 @@ const EventName = styled.p`
 const DayCounterLabel = styled.p`
   margin: 5% 0 0 0;
   font-weight: bold;
-  font-size: ${fontSize["7xl"]};
+  font-size: ${fontSize["6xl"]};
   border-bottom: 1px solid ${colors.themeLight};
 `;
 
@@ -65,6 +65,9 @@ const DayLabel = styled.p`
 const EventLocation = styled.p`
   margin: 5% 0 0 0;
   font-size: ${fontSize.lg};
+  @media (min-width: ${breakpoints.lg}) {
+    font-size: ${fontSize["xl"]};
+  }
 `;
 
 interface TileProps {

@@ -70,7 +70,7 @@ const Description = styled.div`
     }
   }
   span {
-    color: #ffba00;
+    color: ${colors.yellow};
     text-decoration: underline;
   }
   div {

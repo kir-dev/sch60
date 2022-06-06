@@ -19,7 +19,7 @@ const Main: FunctionComponent = () => {
           <p>
             Idén ünnepeljük a kollégiumi önkormányzatiság 60. évfordulóját, amit
             a korábbi évtizedek alapján{" "}
-            <a href={fbPages.sch60} target="_blank" rel="noopener">
+            <a href={fbPages.sch60} target="_blank" rel="noreferrer">
               <span>SCH60</span>
             </a>{" "}
             jubileumi évnek hívunk.

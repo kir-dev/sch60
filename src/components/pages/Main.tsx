@@ -32,6 +32,9 @@ const Main: FunctionComponent = () => {
           </p>
         </Description>
       </Section>
+      <Section>
+        <Button to="/rolunk" title="Történetünk" />
+      </Section>
       <Section title="Közelgő események" widthRestriction={false}>
         <TileLayout>
           {events

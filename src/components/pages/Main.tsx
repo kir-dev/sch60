@@ -1,7 +1,7 @@
 import { FunctionComponent } from "react";
 import Page from "../layout/Page";
 import styled from "styled-components";
-import { breakpoints, colors, spacing } from "../../utils/theme";
+import { breakpoints, colors, fontSize, spacing } from "../../utils/theme";
 import { Tile, TileLayout } from "../elements/Tile";
 import { events } from "../../utils/content";
 import Section from "../layout/Section";
@@ -62,6 +62,9 @@ const Description = styled.div`
   font-weight: 300;
   @media screen and (max-width: ${breakpoints.md}) {
     flex-direction: column;
+    h1 {
+      font-size: ${fontSize["5xl"]};
+    }
   }
   span {
     color: #ffba00;
@@ -74,6 +77,10 @@ const Description = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  p {
+    font-size: ${fontSize.lg};
   }
 `;
 

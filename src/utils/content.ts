@@ -1,21 +1,31 @@
+import { link } from "fs";
 import { EventType, TimelineEntity } from "./types";
+
+export const fbPages = {
+  sch60: "https://www.facebook.com/schonherz60/",
+  schcst: "https://www.facebook.com/schcst",
+  events: {
+    junialis: "https://www.facebook.com/events/413093190377370",
+  },
+};
 
 export const events: EventType[] = [
   {
     name: "Juniálisch",
     date: new Date(2022, 5, 18),
     location: "Schönherz kollégium",
-    image: "/img/events/schonherz.png",
-    description:
-      "Egész napos családi és CSR programok a Schönherz körül Iván nappal összekötve.",
+    image: "/img/events/bench_stock.jpg",
+    description: "Egész napos családi és CSR programok a Schönherz körül.",
+    link: fbPages.events.junialis,
   },
   {
     name: "CST50",
     date: new Date(2022, 5, 19),
     location: "Hűvösvölgy - Nagyrét",
-    image: "/img/events/cst.jpg",
+    image: "/img/events/hiking_stock.jpg",
     description:
       "50. alkalommal kerül megrendezésre a méltán híres Csillagtúra.",
+    link: fbPages.schcst,
   },
   {
     name: "QPA50",

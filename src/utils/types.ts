@@ -10,6 +10,7 @@ export type EventType = {
   location: string;
   description: string;
   image: string;
+  link?: string;
 };
 
 export type TimelineEntity = {

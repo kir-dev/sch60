@@ -3,11 +3,13 @@ import { breakpoints, colors, fontSize, spacing } from "../../utils/theme";
 import { EventType } from "../../utils/types";
 import { FunctionComponent } from "react";
 import { getTileText } from "../../utils/getDaysUntilFromDate";
+import { motion } from "framer-motion";
 
 export const TileLayout = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 4em;
   @media screen and (max-width: ${breakpoints.lg}) {
     flex-direction: column;
   }
@@ -52,7 +54,7 @@ const EventName = styled.p`
 const DayCounterLabel = styled.p`
   margin: 5% 0 0 0;
   font-weight: bold;
-  font-size: ${fontSize["7xl"]};
+  font-size: ${fontSize["6xl"]};
   border-bottom: 1px solid ${colors.themeLight};
 `;
 
@@ -65,6 +67,9 @@ const DayLabel = styled.p`
 const EventLocation = styled.p`
   margin: 5% 0 0 0;
   font-size: ${fontSize.lg};
+  @media (min-width: ${breakpoints.lg}) {
+    font-size: ${fontSize["xl"]};
+  }
 `;
 
 interface TileProps {
@@ -73,19 +78,35 @@ interface TileProps {
 
 export const Tile: FunctionComponent<TileProps> = ({ event }) => {
   return (
-    <TileWrapper backgroundUrl={event.image}>
-      <EventName>{event.name}</EventName>
-      <DayCounterLabel>{getTileText(event.date)}</DayCounterLabel>
-      <DayLabel>nap</DayLabel>
-      <EventLocation>
-        {typeof event.date === "string"
-          ? event.date
-          : event.date.toLocaleDateString("hu-HU", {
-              month: "2-digit",
-              day: "2-digit",
-            })}
-        , {event.location}
-      </EventLocation>
-    </TileWrapper>
+    <a
+      //@ts-expect-error disable default onClick for divs without a href link
+      href={event.link || null}
+      style={{ textDecoration: "none" }}
+      target="_blank"
+      rel="noreferrer"
+    >
+      <TileWrapper
+        as={motion.div}
+        backgroundUrl={event.image}
+        whileHover={{
+          scale: 1.05,
+          transition: { duration: 0.2 },
+        }}
+        whileTap={{ scale: 0.9 }}
+      >
+        <EventName>{event.name}</EventName>
+        <DayCounterLabel>{getTileText(event.date)}</DayCounterLabel>
+        <DayLabel>nap</DayLabel>
+        <EventLocation>
+          {typeof event.date === "string"
+            ? event.date
+            : event.date.toLocaleDateString("hu-HU", {
+                month: "2-digit",
+                day: "2-digit",
+              })}
+          , {event.location}
+        </EventLocation>
+      </TileWrapper>
+    </a>
   );
 };

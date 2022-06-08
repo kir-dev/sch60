@@ -1,9 +1,9 @@
 import { FunctionComponent } from "react";
 import Page from "../layout/Page";
 import styled from "styled-components";
-import { breakpoints, colors, spacing } from "../../utils/theme";
+import { breakpoints, colors, fontSize, spacing } from "../../utils/theme";
 import { Tile, TileLayout } from "../elements/Tile";
-import { events } from "../../utils/content";
+import { events, fbPages } from "../../utils/content";
 import Section from "../layout/Section";
 import Button from "../elements/Button";
 import { Wordcloud } from "../elements/Wordcloud";
@@ -18,8 +18,11 @@ const Main: FunctionComponent = () => {
           </div>
           <p>
             Idén ünnepeljük a kollégiumi önkormányzatiság 60. évfordulóját, amit
-            a korábbi évtizedek alapján <span>SCH60</span> jubileumi évnek
-            hívunk.
+            a korábbi évtizedek alapján{" "}
+            <a href={fbPages.sch60} target="_blank" rel="noreferrer">
+              <span>SCH60</span>
+            </a>{" "}
+            jubileumi évnek hívunk.
             <br />
             Schönherzes aktív kollégisták, a Kollégiumi Bizottság, a
             Nevelőtanári Gárda és a Schönherz Alumni Vezetősége szervezésében &
@@ -29,15 +32,17 @@ const Main: FunctionComponent = () => {
           </p>
         </Description>
       </Section>
-      <Section title="Közelgő események" widthRestriction={false}>
+      <Section>
+        <Button to="/rolunk" title="Történetünk" />
+      </Section>
+      <Section title="Közelgő események" widthRestriction={true}>
         <TileLayout>
           {events
             .filter(
               (e) =>
-                typeof e.date === "string" ||
+                typeof e.date !== "string" &&
                 Math.ceil((e.date.getTime() - Date.now()) / 86400000) >= 0
             )
-            .slice(0, 3)
             .map((event) => (
               <Tile key={event.name} event={event} />
             ))}
@@ -62,9 +67,12 @@ const Description = styled.div`
   font-weight: 300;
   @media screen and (max-width: ${breakpoints.md}) {
     flex-direction: column;
+    h1 {
+      font-size: ${fontSize["5xl"]};
+    }
   }
   span {
-    color: #ffba00;
+    color: ${colors.yellow};
     text-decoration: underline;
   }
   div {
@@ -74,6 +82,10 @@ const Description = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  p {
+    font-size: ${fontSize.lg};
   }
 `;
 

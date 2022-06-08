@@ -66,9 +66,13 @@ const DayLabel = styled.p`
 
 const EventLocation = styled.p`
   margin: 5% 0 0 0;
+  font-weight: 500;
   font-size: ${fontSize.lg};
   @media (min-width: ${breakpoints.lg}) {
     font-size: ${fontSize["xl"]};
+  }
+  @media (min-width: ${breakpoints.xl}) {
+    font-size: ${fontSize["2xl"]};
   }
 `;
 

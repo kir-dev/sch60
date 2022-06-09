@@ -5,6 +5,7 @@ import { colors } from "../../utils/theme";
 import Section from "../layout/Section";
 import type { Word } from "react-wordcloud";
 import { WordcloudPlaceholder } from "./WordcloudPlaceholder";
+import { isMobile } from "react-device-detect";
 
 export const Wordcloud: FunctionComponent = () => {
   const [show, setShow] = useState(false);
@@ -26,6 +27,11 @@ export const Wordcloud: FunctionComponent = () => {
     });
     return temp;
   }, []);
+
+  if (isMobile) {
+    return null;
+  }
+
   return show ? (
     <Section>
       <ReactWordcloud

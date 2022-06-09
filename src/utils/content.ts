@@ -47,7 +47,7 @@ export const timeline: TimelineEntity[] = [
   {
     year: 1954,
     description:
-      "Még a budavári kollégiumban indultak útjára a körök és a hagyományos események, amik most is adják a közélet gerincét.",
+      "Ekkor indultak útjára a budavári kollégiumban a körök és a hagyományos események, amelyek most is a közélet gerincét alkotják.",
   },
   {
     year: 1962,
@@ -57,23 +57,21 @@ export const timeline: TimelineEntity[] = [
   {
     year: 1976,
     description:
-      "Ketté szakadt a VIK-es közélet: egy részük a Kruspér utcába költözött.",
+      "Kettészakadt a VIK-es közélet, egy részük a Kruspér utcába költözött.",
   },
   {
-    year: 1982,
+    year: 1981,
     description:
-      "Birtokba vette a jelenlegi épületet, a Schönherz Zoltán Kollégiumot szintén Újbudán.",
+      "A VIK-es közélet birtokba vette a jelenlegi épületet, a Schönherz Zoltán Kollégiumot, szintén Újbudán.",
   },
   {
     year: 2007,
-    description:
-      "Felújítják a kollégiumot, a közélet az egykori Terminus Hotelbe, a Martos és a Kármán kollégiumokba költözik 1 évre, illetve " +
-      'megalakul a SVIE, mint a közélet "új szíve & motorja", akik a HK Hallgatói Kollégiumi Bizottságával együtt alkotják az önkormányzatot.',
+    description: `Megkezdődött a kollégium felújítása, emiatt a közélet az egykori Terminus Hotelbe, a Martos és a Kármán kollégiumokba költözött 1 évre. Ugyanekkor megalakult a SVIE, mint a közélet "új szíve & motorja", akik a HK Hallgatói Kollégiumi Bizottságával együtt alkotják az önkormányzatot jelenleg is`,
   },
   {
     year: 2017,
     description:
-      'A kollégium "elvesztette Zoltán jellegét", s immár csak "Schönherznek" hívjuk, ami mára erős branddé alakult át.',
+      'A kollégiumot a BME Szenátusának határozata értelmében immár csak "Schönherznek" hívjuk, ami mára erős branddé alakult át a fiatalok és öregek körében is egyaránt.',
   },
 ];
 

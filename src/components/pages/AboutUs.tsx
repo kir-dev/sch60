@@ -19,9 +19,10 @@ const AboutUs: FunctionComponent = () => {
             <br />
             Schönherzes aktív kollégisták, a Kollégiumi Bizottság, a
             Nevelőtanári Gárda és a Schönherz Alumni Vezetősége szervezésében &
-            rendezésében programsorozatot tartunk visszavárva és invitálva
-            mindenkit, aki részt venne az emlékezés különböző alkalmain akár
-            családosan, akár évfolyamával, akár kollégáival, akár körtagjaival.
+            rendezésében programsorozatot tartunk, melyre visszavárunk és
+            invitálunk mindenkit, aki részt venne az emlékezés különböző
+            alkalmain akár családosan, akár évfolyamával, akár kollégáival, akár
+            körtagjaival.
           </p>
         </FirstSectionContent>
       </FirstSection>

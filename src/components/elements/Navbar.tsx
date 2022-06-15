@@ -186,5 +186,5 @@ const Drawer = styled(NavbarBaseStyle)<{ theme: string; open: boolean }>`
   @media screen and (max-width: ${breakpoints.md}) {
     display: flex;
   }
-  z-index: 0;
+  z-index: 15;
 `;

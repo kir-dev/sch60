@@ -1,5 +1,24 @@
 import {EventType, TimelineEntity} from "./types";
 
+export const mediaTiles = [
+  {
+    image: "/img/media/junialisch.jpg",
+    name: "Juniálisch",
+    photos_link: "https://spot.sch.bme.hu/photo/2022/20220618_junialisch/"
+  },
+  {
+    image: "/img/media/qpa.jpg",
+    name: "QPA",
+    photos_link: "https://spot.sch.bme.hu/photo/2022/20220904_qpa/"
+  },
+  {
+    image: "/img/media/cst.jpg",
+    name: "Csillagtúra",
+    photos_link: "https://spot.sch.bme.hu/photo/2022/20220619_50_jovanazugy_csillagtura",
+    video_link: "https://bsstudio.hu/video/csillagtura-2022"
+  }
+]
+
 export const fbPages = {
   sch60: "https://www.facebook.com/schonherz60/",
   schcst: "https://www.facebook.com/schcst",

@@ -8,6 +8,7 @@ import {
   spacing,
 } from "../../utils/theme";
 import { Link, useNavigate } from "react-router-dom";
+import {fbPages} from "../../utils/content";
 
 interface NavbarProps {
   theme: "light" | "dark";
@@ -19,16 +20,20 @@ const Navbar: FunctionComponent<NavbarProps> = ({ theme }) => {
   return (
     <>
       <NavbarWrapper theme={theme}>
+        <NavbarItemExternal href={fbPages.sch60} target="_blank">Facebook</NavbarItemExternal>
         <NavbarItem to="/esemenyek">Események</NavbarItem>
         <Logo
           onClick={() => {
             navigate("/");
           }}
         />
+        <NavbarItem to="/mediatar">Médiatár</NavbarItem>
         <NavbarItem to="/rolunk">Rólunk</NavbarItem>
       </NavbarWrapper>
       <Drawer open={menuOpen} theme={theme}>
-        <NavbarItem to="/esemenyek">Események</NavbarItem>
+          <NavbarItemExternal href={fbPages.sch60} target="_blank">Facebook</NavbarItemExternal>
+          <NavbarItem to="/esemenyek">Események</NavbarItem>
+          <NavbarItem to="/mediatar">Médiatár</NavbarItem>
         <NavbarItem to="/rolunk">Rólunk</NavbarItem>
       </Drawer>
       <NavbarWrapperMobile theme={theme}>
@@ -50,6 +55,14 @@ const Navbar: FunctionComponent<NavbarProps> = ({ theme }) => {
 };
 
 export default Navbar;
+
+const NavbarItemExternal = styled.a`
+  text-decoration: none;
+  font-weight: 300;
+  font-size: ${fontSize.xl};
+  margin: 0 ${spacing.xl};
+  color: white;
+`;
 
 const NavbarItem = styled(Link)`
   text-decoration: none;
@@ -82,7 +95,7 @@ const NavbarWrapper = styled(NavbarBaseStyle)`
   width: 90%;
   max-width: 1200px;
   justify-content: center;
-  @media screen and (max-width: ${breakpoints.md}) {
+  @media screen and (max-width: ${breakpoints.lg}) {
     display: none;
   }
 `;
@@ -92,7 +105,7 @@ const NavbarWrapperMobile = styled(NavbarBaseStyle)`
   max-width: 1200px;
   display: none;
   justify-content: space-between;
-  @media screen and (max-width: ${breakpoints.md}) {
+  @media screen and (max-width: ${breakpoints.lg}) {
     display: flex;
   }
 `;
@@ -170,7 +183,7 @@ const MenuButtonWrapper = styled.button<{ theme: string }>`
 
 const Drawer = styled(NavbarBaseStyle)<{ theme: string; open: boolean }>`
   position: fixed;
-  top: 13%;
+  top: 12%;
   left: 10%;
   display: none;
   flex-direction: column;
@@ -183,7 +196,7 @@ const Drawer = styled(NavbarBaseStyle)<{ theme: string; open: boolean }>`
     color: ${({ theme }) => (theme === "dark" ? "black" : colors.themeLight)};
     margin: ${spacing.md};
   }
-  @media screen and (max-width: ${breakpoints.md}) {
+  @media screen and (max-width: ${breakpoints.lg}) {
     display: flex;
   }
   z-index: 15;

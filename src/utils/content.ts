@@ -1,11 +1,31 @@
-import { link } from "fs";
-import { EventType, TimelineEntity } from "./types";
+import {EventType, TimelineEntity} from "./types";
+
+export const mediaTiles = [
+  {
+    image: "/img/media/junialisch.jpg",
+    name: "Juniálisch",
+    photos_link: "https://spot.sch.bme.hu/photo/2022/20220618_junialisch/"
+  },
+  {
+    image: "/img/media/qpa.jpg",
+    name: "QPA",
+    photos_link: "https://spot.sch.bme.hu/photo/2022/20220904_qpa/"
+  },
+  {
+    image: "/img/media/cst.jpg",
+    name: "Csillagtúra",
+    photos_link: "https://spot.sch.bme.hu/photo/2022/20220619_50_jovanazugy_csillagtura",
+    video_link: "https://bsstudio.hu/video/csillagtura-2022"
+  }
+]
 
 export const fbPages = {
   sch60: "https://www.facebook.com/schonherz60/",
   schcst: "https://www.facebook.com/schcst",
   events: {
     junialis: "https://www.facebook.com/events/413093190377370",
+    sch60: "https://www.facebook.com/events/637147511137921",
+    qpa: "https://www.facebook.com/events/1708737886162242"
   },
 };
 
@@ -29,17 +49,19 @@ export const events: EventType[] = [
   },
   {
     name: "QPA50",
-    date: "ősszel",
-    location: "szervezés alatt",
+    date: new Date(2022, 8, 17),
+    location: "Schönherz kollégium",
     image: "/img/events/qpa.png",
     description: "Az 50. kari napokat tartjuk a 60. jubileumi évben.",
+    link: fbPages.events.qpa
   },
   {
     name: "SCH60",
-    date: "ősszel",
-    location: "szervezés alatt",
+    date: new Date(2022, 11, 3),
+    location: "Schönherz kollégium",
     image: "/img/events/sch60.jpg",
     description: "A jubileiumi év záró rendezvénye a Schönherzben.",
+    link: fbPages.events.sch60
   },
 ];
 

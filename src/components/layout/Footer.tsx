@@ -15,7 +15,7 @@ const Footer: FunctionComponent<FooterProps> = ({ theme }) => {
     <FooterWrapper theme={theme}>
       <h2>sch60</h2>
       <p>60.sch.bme.hu</p>
-      <a href="mailto:sch60@sch.bme.hu">6x@sch.bme.hu</a>
+      <a href="mailto:6x@sch.bme.hu">6x@sch.bme.hu</a>
       <a href="https://fb.com/schonherz60" target="_blank" rel="noreferrer">
         fb.com/schonherz60
       </a>

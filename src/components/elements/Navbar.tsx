@@ -61,7 +61,6 @@ const NavbarItemExternal = styled.a`
   font-weight: 300;
   font-size: ${fontSize.xl};
   margin: 0 ${spacing.xl};
-  color: white;
 `;
 
 const NavbarItem = styled(Link)`
@@ -81,7 +80,7 @@ const NavbarBaseStyle = styled.nav<{ theme: string }>`
   display: flex;
   flex-wrap: nowrap;
   box-shadow: ${boxShadow};
-  ${NavbarItem} {
+  ${NavbarItem}, a {
     color: ${({ theme }) => (theme === "dark" ? "black" : colors.themeLight)};
   }
   background-color: ${({ theme }) =>
@@ -183,16 +182,17 @@ const MenuButtonWrapper = styled.button<{ theme: string }>`
 
 const Drawer = styled(NavbarBaseStyle)<{ theme: string; open: boolean }>`
   position: fixed;
-  top: 12%;
+  top: 0;
+  padding-top: 100px;
   left: 10%;
   display: none;
   flex-direction: column;
   overflow: hidden;
   background-color: ${({ theme }) =>
     theme === "dark" ? colors.themeLight : colors.themeDark};
-  ${({ open }) => !open && "top: -20%;"}
+  ${({ open }) => !open && "top: -50%;"}
   transition: top .5s ease;
-  ${NavbarItem} {
+  ${NavbarItem}, a {
     color: ${({ theme }) => (theme === "dark" ? "black" : colors.themeLight)};
     margin: ${spacing.md};
   }

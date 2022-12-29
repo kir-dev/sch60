@@ -2,6 +2,12 @@ import {EventType, TimelineEntity} from "./types";
 
 export const mediaTiles = [
   {
+    image: "/img/media/cst.jpg",
+    name: "Csillagtúra",
+    photos_link: "https://spot.sch.bme.hu/photo/2022/20220619_50_jovanazugy_csillagtura",
+    video_link: "https://bsstudio.hu/video/csillagtura-2022"
+  },
+  {
     image: "/img/media/junialisch.jpg",
     name: "Juniálisch",
     photos_link: "https://spot.sch.bme.hu/photo/2022/20220618_junialisch/"
@@ -12,10 +18,9 @@ export const mediaTiles = [
     photos_link: "https://spot.sch.bme.hu/photo/2022/20220904_qpa/"
   },
   {
-    image: "/img/media/cst.jpg",
-    name: "Csillagtúra",
-    photos_link: "https://spot.sch.bme.hu/photo/2022/20220619_50_jovanazugy_csillagtura",
-    video_link: "https://bsstudio.hu/video/csillagtura-2022"
+    image: "/img/media/sch60.jpg",
+    name: "SCH60",
+    photos_link: "https://spot.sch.bme.hu/photo/2022/20221204_sch60",
   }
 ]
 

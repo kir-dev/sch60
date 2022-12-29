@@ -15,7 +15,7 @@ const Media: FunctionComponent = () => {
                   <TileWrapper backgroundUrl={mt.image}>
                     <EventName>{mt.name}</EventName>
                     <LinkGroup>
-                        {mt.video_link && <a href={mt.video_link} target="_blank">
+                        {mt.video_link && <a href={mt.video_link} target="_blank" rel="noreferrer">
                             <SVG xmlns="http://www.w3.org/2000/svg"
                                  width="60" height="60" viewBox="0 0 24 24" strokeWidth="1.5" stroke="white" fill="none"
                                  strokeLinecap="round" strokeLinejoin="round">
@@ -30,7 +30,7 @@ const Media: FunctionComponent = () => {
                                 <line x1="16" y1="16" x2="20" y2="16"/>
                             </SVG>
                         </a>}
-                        {mt.photos_link && <a href={mt.photos_link} target="_blank">
+                        {mt.photos_link && <a href={mt.photos_link} target="_blank" rel="noreferrer">
                             <SVG xmlns="http://www.w3.org/2000/svg"
                                  width="60" height="60" viewBox="0 0 24 24" strokeWidth="1.5" stroke="white" fill="none"
                                  strokeLinecap="round" strokeLinejoin="round">
@@ -51,8 +51,8 @@ const Media: FunctionComponent = () => {
 };
 
 const TileWrapper = styled.div<{ backgroundUrl?: string }>`
-  width: 28vw;
-  height: 28vw;
+  width: 25rem;
+  height: 25rem;
   background-image: linear-gradient(
       0deg,
       rgba(0, 0, 0, 0.45),
@@ -103,6 +103,7 @@ const SVG = styled.svg`
 const TileLayout = styled.div`
   margin: 5rem 0;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   gap: 4em;

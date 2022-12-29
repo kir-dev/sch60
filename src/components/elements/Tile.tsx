@@ -1,12 +1,12 @@
 import styled from "styled-components";
-import { breakpoints, colors, fontSize, spacing } from "../../utils/theme";
-import { EventType } from "../../utils/types";
-import { FunctionComponent } from "react";
-import { getTileText } from "../../utils/getDaysUntilFromDate";
-import { motion } from "framer-motion";
+import {breakpoints, colors, fontSize, spacing} from "../../utils/theme";
+import {EventType} from "../../utils/types";
+import {FunctionComponent} from "react";
+import {motion} from "framer-motion";
 
 export const TileLayout = styled.div`
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   gap: 4em;
@@ -58,12 +58,6 @@ const DayCounterLabel = styled.p`
   border-bottom: 1px solid ${colors.themeLight};
 `;
 
-const DayLabel = styled.p`
-  margin: 5% 0 0 0;
-  font-weight: bold;
-  font-size: ${fontSize["2xl"]};
-`;
-
 const EventLocation = styled.p`
   margin: 5% 0 0 0;
   font-weight: 500;
@@ -99,16 +93,13 @@ export const Tile: FunctionComponent<TileProps> = ({ event }) => {
         whileTap={{ scale: 0.9 }}
       >
         <EventName>{event.name}</EventName>
-        <DayCounterLabel>{getTileText(event.date)}</DayCounterLabel>
-        <DayLabel>nap</DayLabel>
-        <EventLocation>
-          {typeof event.date === "string"
+        <DayCounterLabel>{typeof event.date === "string"
             ? event.date
             : event.date.toLocaleDateString("hu-HU", {
-                month: "2-digit",
-                day: "2-digit",
-              })}
-          , {event.location}
+              month: "2-digit",
+              day: "2-digit",
+            })}</DayCounterLabel>
+        <EventLocation>{event.location}
         </EventLocation>
       </TileWrapper>
     </a>

@@ -14,15 +14,15 @@ const AboutUs: FunctionComponent = () => {
         <FirstSectionContent>
           <h1>Bemutatkozás</h1>
           <p>
-            Idén ünnepeljük a kollégiumi önkormányzatiság 60. évfordulóját, amit
-            a korábbi évtizedek alapján SCH60 jubileumi évnek hívunk.
+            Idén ünnepeltük a kollégiumi önkormányzatiság 60. évfordulóját, amit
+            a korábbi évtizedek alapján SCH60 jubileumi évnek hívtunk.
             <br />
-            Schönherzes aktív kollégisták, a Kollégiumi Bizottság, a
-            Nevelőtanári Gárda és a Schönherz Alumni Vezetősége szervezésében &
-            rendezésében programsorozatot tartunk, melyre visszavárunk és
-            invitálunk mindenkit, aki részt venne az emlékezés különböző
-            alkalmain akár családosan, akár évfolyamával, akár kollégáival, akár
-            körtagjaival.
+              Schönherzes aktív kollégisták, a Kollégiumi Bizottság, a
+              Nevelőtanári Gárda és a Schönherz Alumni Vezetősége szervezésében &
+              rendezésében programsorozatot tartottunk, melyre visszavártunk és
+              invitáltunk mindenkit, aki részt szeretett volna venni az emlékezés különböző
+              alkalmain akár családosan, akár évfolyamával, akár kollégáival, akár
+              körtagjaival.
           </p>
         </FirstSectionContent>
       </FirstSection>

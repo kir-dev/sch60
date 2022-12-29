@@ -17,17 +17,17 @@ const Main: FunctionComponent = () => {
             <h1>SCH x 60</h1>
           </div>
           <p>
-            Idén ünnepeljük a kollégiumi önkormányzatiság 60. évfordulóját, amit
+            2022-ben ünnepeltük a kollégiumi önkormányzatiság 60. évfordulóját, amit
             a korábbi évtizedek alapján{" "}
             <a href={fbPages.sch60} target="_blank" rel="noreferrer">
               <span>SCH60</span>
             </a>{" "}
-            jubileumi évnek hívunk.
+            jubileumi évnek hívtunk.
             <br />
             Schönherzes aktív kollégisták, a Kollégiumi Bizottság, a
             Nevelőtanári Gárda és a Schönherz Alumni Vezetősége szervezésében &
-            rendezésében programsorozatot tartunk, melyre visszavárunk és
-            invitálunk mindenkit, aki részt venne az emlékezés különböző
+            rendezésében programsorozatot tartottunk, melyre visszavártunk és
+            invitáltunk mindenkit, aki részt szeretett volna venni az emlékezés különböző
             alkalmain akár családosan, akár évfolyamával, akár kollégáival, akár
             körtagjaival.
           </p>
@@ -36,14 +36,9 @@ const Main: FunctionComponent = () => {
       <Section>
         <Button to="/rolunk" title="Történetünk" />
       </Section>
-      <Section title="Közelgő események" widthRestriction={true}>
+      <Section title="Megtartott események" widthRestriction={true}>
         <TileLayout>
           {events
-            .filter(
-              (e) =>
-                typeof e.date !== "string" &&
-                Math.ceil((e.date.getTime() - Date.now()) / 86400000) >= 0
-            )
             .map((event) => (
               <Tile key={event.name} event={event} />
             ))}

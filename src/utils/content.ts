@@ -2,15 +2,15 @@ import {EventType, TimelineEntity} from "./types";
 
 export const mediaTiles = [
   {
+    image: "/img/media/junialisch.jpg",
+    name: "Juniálisch",
+    photos_link: "https://spot.sch.bme.hu/photo/2022/20220618_junialisch/"
+  },
+  {
     image: "/img/media/cst.jpg",
     name: "Csillagtúra",
     photos_link: "https://spot.sch.bme.hu/photo/2022/20220619_50_jovanazugy_csillagtura",
     video_link: "https://bsstudio.hu/video/csillagtura-2022"
-  },
-  {
-    image: "/img/media/junialisch.jpg",
-    name: "Juniálisch",
-    photos_link: "https://spot.sch.bme.hu/photo/2022/20220618_junialisch/"
   },
   {
     image: "/img/media/qpa.jpg",
@@ -49,7 +49,7 @@ export const events: EventType[] = [
     location: "Hűvösvölgy - Nagyrét",
     image: "/img/events/hiking_stock.jpg",
     description:
-      "50. alkalommal kerül megrendezésre a méltán híres Csillagtúra.",
+      "50. alkalommal került megrendezésre a méltán híres Csillagtúra.",
     link: fbPages.schcst,
   },
   {
@@ -57,7 +57,7 @@ export const events: EventType[] = [
     date: new Date(2022, 8, 17),
     location: "Schönherz kollégium",
     image: "/img/events/qpa.png",
-    description: "Az 50. kari napokat tartjuk a 60. jubileumi évben.",
+    description: "Az 50. kari napokat tartottunk a 60. jubileumi évben.",
     link: fbPages.events.qpa
   },
   {

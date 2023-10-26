@@ -4,23 +4,24 @@ export const mediaTiles = [
   {
     image: "/img/media/junialisch.jpg",
     name: "Juniálisch",
-    photos_link: "https://spot.sch.bme.hu/photo/2022/20220618_junialisch/"
+    photos_links: "https://spot.sch.bme.hu/photo/2022/20220618_junialisch/"
   },
   {
     image: "/img/media/cst.jpg",
     name: "Csillagtúra",
     photos_link: "https://spot.sch.bme.hu/photo/2022/20220619_50_jovanazugy_csillagtura",
-    video_link: "https://bsstudio.hu/video/csillagtura-2022"
+    video_links: "https://bsstudio.hu/video/csillagtura-2022"
   },
   {
     image: "/img/media/qpa.jpg",
     name: "QPA",
-    photos_link: "https://spot.sch.bme.hu/photo/2022/20220904_qpa/"
+    photos_links: "https://spot.sch.bme.hu/photo/2022/20220904_qpa/"
   },
   {
     image: "/img/media/sch60.jpg",
     name: "SCH60",
     photos_link: "https://spot.sch.bme.hu/photo/2022/20221204_sch60",
+    video_links: "https://bsstudio.hu/video/sch60-feeling,https://bsstudio.hu/video/sch60-uzleti-kerekasztal-beszelgetes-avagy-miert-erdemes-kozelni,https://bsstudio.hu/video/sch60-tortenelmi-kerekasztal-beszelgetes-a-60-ev-jegyeben"
   }
 ]
 

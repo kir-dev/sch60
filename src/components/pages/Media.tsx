@@ -1,9 +1,9 @@
 import {FunctionComponent} from "react";
+import styled from "styled-components";
+import {mediaTiles} from "../../utils/content";
+import {breakpoints, colors, fontSize, spacing} from "../../utils/theme";
 import Page from "../layout/Page";
 import Section from "../layout/Section";
-import {mediaTiles} from "../../utils/content";
-import styled from "styled-components";
-import {breakpoints, colors, fontSize, spacing} from "../../utils/theme";
 
 
 const Media: FunctionComponent = () => {
@@ -15,8 +15,8 @@ const Media: FunctionComponent = () => {
                   <TileWrapper backgroundUrl={mt.image}>
                     <EventName>{mt.name}</EventName>
                     <LinkGroup>
-                        {mt.video_link && <a href={mt.video_link} target="_blank" rel="noreferrer">
-                            <SVG xmlns="http://www.w3.org/2000/svg"
+                        {mt.video_links?.split(',').map((vl,i)=>(<A href={vl} target="_blank" rel="noreferrer">
+                            <SVG index={i} xmlns="http://www.w3.org/2000/svg"
                                  width="60" height="60" viewBox="0 0 24 24" strokeWidth="1.5" stroke="white" fill="none"
                                  strokeLinecap="round" strokeLinejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -29,8 +29,9 @@ const Media: FunctionComponent = () => {
                                 <line x1="16" y1="8" x2="20" y2="8"/>
                                 <line x1="16" y1="16" x2="20" y2="16"/>
                             </SVG>
-                        </a>}
-                        {mt.photos_link && <a href={mt.photos_link} target="_blank" rel="noreferrer">
+                            <p>{i+1}</p>
+                        </A>))}
+                        {mt.photos_link && <A href={mt.photos_link} target="_blank" rel="noreferrer">
                             <SVG xmlns="http://www.w3.org/2000/svg"
                                  width="60" height="60" viewBox="0 0 24 24" strokeWidth="1.5" stroke="white" fill="none"
                                  strokeLinecap="round" strokeLinejoin="round">
@@ -40,7 +41,7 @@ const Media: FunctionComponent = () => {
                                 <path d="M4 15l4 -4a3 5 0 0 1 3 0l5 5"/>
                                 <path d="M14 14l1 -1a3 5 0 0 1 3 0l2 2"/>
                             </SVG>
-                        </a>}
+                        </A>}
                     </LinkGroup>
                   </TileWrapper>
               ))}
@@ -93,7 +94,8 @@ const LinkGroup = styled.div`
   gap: 2rem;
 `
 
-const SVG = styled.svg`
+const SVG = styled.svg<{index?: number}>`
+  position: relative;
   transition: transform .5s;
   :hover{
     transform: rotate(20deg);
@@ -111,6 +113,24 @@ const TileLayout = styled.div`
     flex-direction: column;
   }
 `;
+
+const A = styled.a`
+  position: relative;
+  p{
+    margin: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: white;
+    border-radius: 50%;
+    color: black;
+    width: 1rem;
+    height: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+`
 
 
 export default Media;

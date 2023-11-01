@@ -4,7 +4,7 @@ export const mediaTiles = [
   {
     image: "/img/media/junialisch.jpg",
     name: "Juniálisch",
-    photos_links: "https://spot.sch.bme.hu/photo/2022/20220618_junialisch/"
+    photos_link: "https://spot.sch.bme.hu/photo/2022/20220618_junialisch/"
   },
   {
     image: "/img/media/cst.jpg",
@@ -15,7 +15,7 @@ export const mediaTiles = [
   {
     image: "/img/media/qpa.jpg",
     name: "QPA",
-    photos_links: "https://spot.sch.bme.hu/photo/2022/20220904_qpa/"
+    photos_link: "https://spot.sch.bme.hu/photo/2022/20220904_qpa/"
   },
   {
     image: "/img/media/sch60.jpg",
